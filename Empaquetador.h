@@ -9,11 +9,10 @@
 #include "Producto.h"
 
 class Empaquetador: public Maquina{
-private:
-	
+
 
 public:
-	Empaquetador();
+	Empaquetador(int,std::string);
 	void procesar();
 };
 

@@ -5,8 +5,9 @@
 #include <string>
 
 
-Maquina::Maquina(int _id){
+Maquina::Maquina(int _id, std::string _type){
 	id = _id;
+	type = _type;
 }
 
 int Maquina::get_id(){
@@ -22,11 +23,11 @@ void Maquina::set_type(std::string _type){
 }
 
 // Recibe un nuevo producto y lo registra en el atributo 'producto' listo para procesar
-void Maquina::set_producto(Producto& _producto){
-	producto = _producto
+void Maquina::set_producto(Producto* _producto){
+	producto = _producto;
 }
 
 void Maquina::procesar(){
-	//Cada hija de maquina sobreescribe esta función con su proceso inherente.
+	//Cada hija de maquina sobreescribe esta función con su proceso propio.
 }
 

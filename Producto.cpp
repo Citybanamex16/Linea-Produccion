@@ -22,6 +22,7 @@ void Producto::set_type(string _type){
 	type = _type;
 }
 
+
 string Producto::get_state(){
 	return state;
 }

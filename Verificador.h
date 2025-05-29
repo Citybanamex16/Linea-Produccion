@@ -10,11 +10,9 @@
 #include "Producto.h"
 
 class Verificador: public Maquina{
-private:
-	
 
 public:
-	Verificador();
+	Verificador(int,std::string);
 	void procesar();
 };
 

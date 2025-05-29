@@ -11,16 +11,15 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
 
 
 class Fabrica {
 private:
-	std::vecto<Producto> listaProductos;
-
-	Ensamblador	 ensamblador;
-	Verificador	 verificador;
-	Empaquetador empaquetador;
+	int const static MAX_PRODUCTOS = 20;
+	Producto* listaProductos[MAX_PRODUCTOS];
+	Maquina* lista_Maquinas[3];
+	// tamaño del array, usado en ciclos for que recorren la lista Productos
+	int num_productos;
 
 
 public:
@@ -28,15 +27,9 @@ public:
 	Fabrica();
 	Fabrica(int);
 
+	void iniciar_simulador();
+	void estado_del_producto(Producto*,std::string);
 
-	std::vector get_listaProductos();
-
-	void añadir_listaProducto();
-
-	std::vector get_listaMaquina();
-
-	void añadir_listaMaquina();
-
-}
+};
 
 #endif

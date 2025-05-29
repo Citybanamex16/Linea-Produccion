@@ -3,12 +3,12 @@
 #include <iostream>
 #include <string>
 
-Verificador::Verificador():Maquina(int _id){
+Verificador::Verificador(int _id,std::string _type):Maquina(_id,_type){
 
 }
 
 void Verificador::procesar(){
-	if (producto.get_verificado() = false;){
-	producto.set_verificado(true); //Verificamos el producto.
+	if (producto->get_verificado() == false){
+	producto->set_verificado(true); //Verificamos el producto.
 	}
 }

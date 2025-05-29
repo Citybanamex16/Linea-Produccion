@@ -9,21 +9,18 @@
 // Relación de Agregación
 #include "Producto.h"
 
+
 class Ensamblador: public Maquina{
 private:
 	float tiempo_ensamblado;
 
 public:
-	Ensambladora();
+	Ensamblador(int,std::string);
 	int get_tiempo_ensamblado();
 	void procesar();
 
 
-
-
-
-
-}
+};
 
 
 
