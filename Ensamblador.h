@@ -12,7 +12,7 @@
 
 class Ensamblador: public Maquina{
 private:
-	float tiempo_ensamblado;
+	
 
 public:
 	Ensamblador(int,std::string);

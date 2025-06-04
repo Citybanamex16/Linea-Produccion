@@ -8,10 +8,15 @@
 Maquina::Maquina(int _id, std::string _type){
 	id = _id;
 	type = _type;
+	tiempo = 1;
 }
 
 int Maquina::get_id(){
 	return id;
+}
+
+int Maquina::get_tiempo(){
+	return tiempo;
 }
 
 std::string Maquina::get_type(){

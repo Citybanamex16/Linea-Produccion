@@ -12,7 +12,7 @@ int main(){
 	int valor_usuario;
 	cout << "Bienvenido a la Fabrica" << endl;
 
-	cout << "¿Cuantos productos quiere generar? (MAX 20)" << endl;
+	cout << "¿Cuantos productos quieres generar?" << endl;
 	cin >> valor_usuario;
 
 	if(valor_usuario <= 20){
@@ -21,7 +21,6 @@ int main(){
 	break;
 	
 }
-
 	else {
 		cout << "Sobreecarga, Limite de productos excedido, intentar otra vez" << endl;
 		continue;

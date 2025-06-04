@@ -11,16 +11,19 @@
 class Maquina{
 protected:
 	int id;
+	float margen_error;
 	Producto* producto; //Relación de agregación con un objeto Producto
 	std::string type; // Tipo de maquina.
+	int tiempo;
 
 public:
 	Maquina(int,std::string);
 	int get_id();
+	int get_tiempo();
 	void set_type(std:: string);
 	std::string get_type();
 	void set_producto(Producto*);
-	virtual void procesar(); //Sobreescrito por cada hijo para incuir su proceso.
+	virtual void procesar() = 0; //Sobreescrito por cada hijo para incuir su proceso.
 
 };
 

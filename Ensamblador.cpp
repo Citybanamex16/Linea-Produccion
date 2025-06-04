@@ -6,18 +6,23 @@
 
 
 Ensamblador::Ensamblador(int _id, std::string _type):Maquina(_id, _type){
-	tiempo_ensamblado = 0.5;
+	margen_error = 50.0;
 
-}
-
-int Ensamblador::get_tiempo_ensamblado(){
-	return tiempo_ensamblado;
 }
 
 void Ensamblador::procesar(){
 	// Verificamos si el producto ya esta ensamblado
 	if(producto->get_ensamblado() == false){
-	producto->set_ensamblado(true); // Ensamblamos y modificamos el producto
+		if(producto-> get_error() > margen_error){
+			//Error en ensamblado
+			producto->set_ensamblado(false);
+		}
+
+		else {
+			producto->set_ensamblado(true); // Ensamblamos y modificamos el producto
+		}
+
+	
 }
 
 

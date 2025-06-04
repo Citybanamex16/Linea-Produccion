@@ -14,6 +14,8 @@ private:
 	int id; // id del producto, diferenciar los demas. Fijo
 	std::string type; // Tipo de producto. Fijo
 
+	int error;
+
 	std::string state; // Estado del producto: ¿En proceso o acabado ?
 	bool ensamblado; // Atributo booleano modificado por el ensamblador
 	bool verificado; // Atributo booleano modificado por el verificador
@@ -31,6 +33,8 @@ public:
 
 	std::string get_state(); // Las maquinas necesitan saber si el productor esta acabado o en proceso
 	void set_state(std::string);
+
+	float get_error();
 
 	//Atributos que interactuan con objetos Maquina. Cada uno de estos atributos es modificado por su maquina correspondiente.
 	bool get_ensamblado();

@@ -15,11 +15,14 @@
 
 class Fabrica {
 private:
-	int const static MAX_PRODUCTOS = 20;
-	Producto* listaProductos[MAX_PRODUCTOS];
+	//int const static MAX_PRODUCTOS = 20;
+	Producto** listaProductos; // doble apuntador a un array en el HEAP.
 	Maquina* lista_Maquinas[3];
 	// tamaño del array, usado en ciclos for que recorren la lista Productos
 	int num_productos;
+
+	int num_errores;
+	int num_exitos;
 
 
 public:

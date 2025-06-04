@@ -3,15 +3,28 @@
 #include "Producto.h"
 #include <iostream>
 #include <string>
+// Librería que incluye la función rand()
+#include <cstdlib>
 
 using namespace std;
 
 Producto::Producto(int _id){
 	id = _id;
+
+	error = rand() % 100;
+
+	//cout << "probabilidad de error del: " << error << endl;
+
+
+	// Generamos el error de forma aleatoria. 
 }
 
 int Producto::get_id(){
 	return id;
+}
+
+float Producto::get_error(){
+	return error;
 }
 
 string Producto::get_type(){
