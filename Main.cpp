@@ -22,7 +22,7 @@ int main(){
 	
 }
 	else {
-		cout << "Sobreecarga, Limite de productos excedido, intentar otra vez" << endl;
+		cout << "Sobrecarga, Limite de productos excedido, intentar otra vez" << endl;
 		continue;
 	}
 }

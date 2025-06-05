@@ -22,9 +22,9 @@ private:
 	int num_productos;
 
 	// Array para errores[error en ensamblador, error en empaquetador, error en verificador]
-	int num_errores[3] = {0, 0, 0};
+	int num_errores[3];
 	// Array para errores[exitos en ensamblador, exitos en empaquetador, exitos en verificador]
-	int num_exitos[3] = {0, 0, 0};;
+	int num_exitos[3];
 
 
 public:

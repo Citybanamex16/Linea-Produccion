@@ -90,6 +90,8 @@ string Fabrica::iniciar_simulador(){
 			estado_del_producto(listaProductos[i],tipo_maquina);
 			//Retrasar el siguiente cout
 
+
+			
 			std::this_thread::sleep_for(std::chrono::seconds(lista_Maquinas[j]->get_tiempo()));
 			//cout << "j:" << j << endl;
 
@@ -162,7 +164,7 @@ string Fabrica::generar_reporte(){
 
 		float efectividad = (total > 0) ? (static_cast<float>(num_exitos[i]) / total) * 100.0f : 0.0f;
 
-		 Reporte_completo += "Maquina: " + lista_Maquinas[i]->get_type() + "\n";
+		Reporte_completo += "Maquina: " + lista_Maquinas[i]->get_type() + "\n";
         Reporte_completo += "  - Numero de exitos: " + to_string(num_exitos[i]) + "\n";
         Reporte_completo += "  - Numero de errores: " + to_string(num_errores[i]) + "\n";
         Reporte_completo += "  - Efectividad: " + to_string(efectividad) + "%\n";

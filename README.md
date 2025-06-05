@@ -6,6 +6,20 @@ Utilizamos arrays estaticos con tamaño limite para almacenar a las instancias d
 
 La relación temporal de agregación entre la clase producto y las subclases de la clase maquina es fundamental para el correcto funcionamiento del programa. La instancia producto debe entrara en correcto orden (ensamblado -> verificación -> empaquetado) en donde entra, es modificado por la maquina, sale y repite el proceso con la siguiente maquina. La incorrecta aplicación del concepto de agregación puede provocar que no se modifique ningún objeto, por lo que la eficiencia sería de 0. 
 
-Git_Conectado.
+Compilar en Terminal
+
+Para copiar la terminal es necesario compilar todos los 6 archivo .cpp de los objetos. Debemos de compilar: main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp 
+
+En el caso de Mac se puede usar el siguiente comando en terminal: 
+
+g++ main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp -o 
+
+En windows con MinGW podemos usar este comando: g++ main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp -o main.exe
+
+En el caso de Git Bash en windows usamos el siguiente comando: g++ main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp -o main.exe
+
+
+
+
 
 ![UML drawio](https://github.com/user-attachments/assets/9510e44a-489f-41a1-8dce-d6f3f150f6c6)
