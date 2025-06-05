@@ -8,7 +8,7 @@ La relación temporal de agregación entre la clase producto y las subclases de 
 
 Compilar en Terminal
 
-Para copiar la terminal es necesario compilar todos los 6 archivo .cpp de los objetos. Debemos de compilar: main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp 
+Para compilar en la terminal es necesario compilar todos los 6 archivo .cpp de los objetos. Debemos de compilar: main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp 
 
 En el caso de Mac se puede usar el siguiente comando en terminal: 
 
