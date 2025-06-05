@@ -21,8 +21,10 @@ private:
 	// tamaño del array, usado en ciclos for que recorren la lista Productos
 	int num_productos;
 
-	int num_errores;
-	int num_exitos;
+	// Array para errores[error en ensamblador, error en empaquetador, error en verificador]
+	int num_errores[3] = {0, 0, 0};
+	// Array para errores[exitos en ensamblador, exitos en empaquetador, exitos en verificador]
+	int num_exitos[3] = {0, 0, 0};;
 
 
 public:
@@ -30,8 +32,9 @@ public:
 	Fabrica();
 	Fabrica(int);
 
-	void iniciar_simulador();
+	std::string iniciar_simulador();
 	void estado_del_producto(Producto*,std::string);
+	std::string generar_reporte();
 
 };
 

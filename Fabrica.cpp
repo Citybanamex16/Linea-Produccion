@@ -32,6 +32,11 @@ Fabrica::Fabrica(){
 	
 	num_productos = 1;
 
+	for (int i = 0; i < 3; i++) {
+        num_exitos[i] = 0;
+        num_errores[i] = 0;
+    }
+
 
 }
 
@@ -56,11 +61,16 @@ Fabrica::Fabrica(int _cantidad){
 	}
 
 	num_productos = _cantidad;
-	cout << "Num_productos" << num_productos << endl;
+	//cout << "Num_productos" << num_productos << endl;
+
+	for (int i = 0; i < 3; i++) {
+        num_exitos[i] = 0;
+        num_errores[i] = 0;
+    }
 
 }
 
-void Fabrica::iniciar_simulador(){
+string Fabrica::iniciar_simulador(){
 	string tipo_maquina;
 	cout << "numero de productos a generar: " << num_productos<< endl;
 
@@ -79,6 +89,7 @@ void Fabrica::iniciar_simulador(){
 			//cout << "cout desde iniciar simulador "<<listaProductos[i]->get_id()<< endl;
 			estado_del_producto(listaProductos[i],tipo_maquina);
 			//Retrasar el siguiente cout
+
 			std::this_thread::sleep_for(std::chrono::seconds(lista_Maquinas[j]->get_tiempo()));
 			//cout << "j:" << j << endl;
 
@@ -87,43 +98,50 @@ void Fabrica::iniciar_simulador(){
 	cout<< "Producto numero: " << listaProductos[i]->get_id() << " Terminado. "<< endl;
 	cout << endl;
 	}
-	cout << "Numero de errores en Linea de ensamblaje: " << num_errores << endl;
+
+	return generar_reporte();
+
 }
 
 
 void Fabrica::estado_del_producto(Producto* producto,string tipo_maquina){
 	/* Esta función recibe el puntero del producto y el tipo de maquina del que viene. Inspecciona si el producto fue correctamente modificado
 	por la maquina. Imprime si el proceso se completo con exito o si hubo un error.*/
+
+	//Ensamblador
 	if(tipo_maquina == "Ensamblador"){
+
 		if(producto->get_ensamblado() == true){
 			cout << "Producto numero: " << producto->get_id() << " ensamblado correctamente" << endl;
-			num_exitos += 1;
+			num_exitos[0] += 1;
 		}
 		else{
 			cout << "Producto numero: " << producto->get_id() << " error en ensamblaje" << endl;
-			num_errores +=1;
+			num_errores[0]+=1;
 		}
 	}
 
+	//Verificador
 	else if(tipo_maquina == "Verificador"){
 		if(producto->get_verificado() == true){
 			cout << "Producto numero: " << producto->get_id() << " verificado correctamente" << endl;
-			num_exitos += 1;
+			num_exitos[1] += 1;
 		}
 		else{
 			cout << "Producto numero: " << producto->get_id() << " error en verificación" << endl;
-			num_errores +=1;
+			num_errores[1] +=1;
 		}
 	}
 
+	//Empaquetador
 	else if(tipo_maquina == "Empaquetador"){
 		if(producto->get_empaquetado() == true){
 			cout << "Producto numero: " << producto->get_id() << " empaquetado correctamente" << endl;
-			num_exitos += 1;
+			num_exitos[2] += 1;
 		}
 		else{
 			cout << "Producto numero: " << producto->get_id() << " error en empaquetado" << endl;
-			num_errores +=1;
+			num_errores[2] +=1;
 		}
 	}
 
@@ -133,7 +151,26 @@ void Fabrica::estado_del_producto(Producto* producto,string tipo_maquina){
 
 }
 
+string Fabrica::generar_reporte(){
+	// numero de exitos, errores y eficiencia de cada maquina. 
+	string Reporte_completo = " ";
 
+	for(int i =0; i<3;i++){
+		// Formato: tipo de maquina + numero de casos exitosos + numero de casos fallados + porcentaje de efectividad
+		
+		int total = num_exitos[i] + num_errores[i];
+
+		float efectividad = (total > 0) ? (static_cast<float>(num_exitos[i]) / total) * 100.0f : 0.0f;
+
+		 Reporte_completo += "Maquina: " + lista_Maquinas[i]->get_type() + "\n";
+        Reporte_completo += "  - Numero de exitos: " + to_string(num_exitos[i]) + "\n";
+        Reporte_completo += "  - Numero de errores: " + to_string(num_errores[i]) + "\n";
+        Reporte_completo += "  - Efectividad: " + to_string(efectividad) + "%\n";
+        Reporte_completo += "-----------------------------\n";
+	}
+	return Reporte_completo;
+
+}
 
 
 

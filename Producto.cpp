@@ -13,7 +13,7 @@ Producto::Producto(int _id){
 
 	error = rand() % 100;
 
-	//cout << "probabilidad de error del: " << error << endl;
+	cout << "probabilidad de error del: " << error << endl;
 
 
 	// Generamos el error de forma aleatoria. 

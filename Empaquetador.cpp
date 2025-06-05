@@ -15,10 +15,11 @@ void Empaquetador::procesar(){
 			producto->set_empaquetado(false);
 		}
 
-		}
+		
 		else{
 			producto->set_empaquetado(true);
 
 		}
 	
-};
+}
+}

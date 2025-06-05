@@ -1,4 +1,4 @@
-//main.cpp
+ //main.cpp
 
 #include <iostream>
 #include <string>
@@ -17,7 +17,7 @@ int main(){
 
 	if(valor_usuario <= 20){
 	Fabrica fabrica(valor_usuario);
-	fabrica.iniciar_simulador();
+	cout << fabrica.iniciar_simulador() << endl;
 	break;
 	
 }
