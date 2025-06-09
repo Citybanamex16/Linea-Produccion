@@ -16,7 +16,6 @@ private:
 
 public:
 	Ensamblador(int,std::string);
-	int get_tiempo_ensamblado();
 	void procesar();
 
 

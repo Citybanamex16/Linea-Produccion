@@ -11,7 +11,7 @@
 class Maquina{
 protected:
 	int id;
-	float margen_error;
+	int margen_error;
 	Producto* producto; //Relación de agregación con un objeto Producto
 	std::string type; // Tipo de maquina.
 	int tiempo;
