@@ -20,6 +20,7 @@ En windows con MinGW podemos usar este comando: g++ main.cpp Fabrica.cpp Product
 En el caso de Git Bash en windows usamos el siguiente comando: g++ main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp -o main.exe
 
 
+![UML drawio](https://github.com/user-attachments/assets/41105205-6ce6-422a-a320-23281fe0c14f)
 
 
-![UML drawio](https://github.com/user-attachments/assets/9510e44a-489f-41a1-8dce-d6f3f150f6c6)
+
