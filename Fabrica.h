@@ -26,6 +26,9 @@ private:
 	// Array para errores[exitos en ensamblador, exitos en empaquetador, exitos en verificador]
 	int num_exitos[3];
 
+	int iteracion_fabrica;
+	std::string reportes[20];
+
 
 public:
 	// 2 constructores. 1 para generar solo 1 producto y otro para generar la cantidad deseada de productos.
@@ -35,6 +38,12 @@ public:
 	std::string iniciar_simulador();
 	void estado_del_producto(Producto*,std::string);
 	std::string generar_reporte();
+
+	std::string get_reporte(int);
+
+	int get_iteraciones();
+
+	void crear_producto(int);
 
 };
 

@@ -14,6 +14,8 @@ using namespace std;
 
 Fabrica::Fabrica(){
 	// Inicializamos los arrays de cada tipo.
+	iteracion_fabrica = 0;
+	string reportes[20];
 
 	// Creamos los componentes de la fabrica
 	
@@ -24,11 +26,6 @@ Fabrica::Fabrica(){
 	lista_Maquinas[1] = verificador;
 	Maquina* empaquetador = new Empaquetador(1,"Empaquetador");
 	lista_Maquinas[2] = empaquetador;
-
-	// Creamos el producto en el Heap para que prevalezca una ves haya acabado la función.
-	Producto* producto = new Producto(1);
-	listaProductos[0] = producto;
-
 	
 	num_productos = 1;
 
@@ -37,11 +34,14 @@ Fabrica::Fabrica(){
         num_errores[i] = 0;
     }
 
+    iteracion_fabrica = 0;
 
 }
 
 
 Fabrica::Fabrica(int _cantidad){
+	iteracion_fabrica = 0;
+	string reportes[20];
 
 	//Creamos el array dinamico en el HEAP de tamaño _cantidad
 	listaProductos = new Producto*[_cantidad];
@@ -67,10 +67,16 @@ Fabrica::Fabrica(int _cantidad){
         num_exitos[i] = 0;
         num_errores[i] = 0;
     }
+    iteracion_fabrica = 0;
 
 }
 
 string Fabrica::iniciar_simulador(){
+
+	iteracion_fabrica += 1;	
+
+	cout << "Iteracion de fabrica numero " << iteracion_fabrica << endl;
+
 	string tipo_maquina;
 	cout << "numero de productos a generar: " << num_productos<< endl;
 
@@ -164,20 +170,46 @@ string Fabrica::generar_reporte(){
 
 		float efectividad = (total > 0) ? (static_cast<float>(num_exitos[i]) / total) * 100.0f : 0.0f;
 
+		Reporte_completo += "Simulación numero: " + to_string(iteracion_fabrica) + "\n";
 		Reporte_completo += "Maquina: " + lista_Maquinas[i]->get_type() + "\n";
         Reporte_completo += "  - Numero de exitos: " + to_string(num_exitos[i]) + "\n";
         Reporte_completo += "  - Numero de errores: " + to_string(num_errores[i]) + "\n";
         Reporte_completo += "  - Efectividad: " + to_string(efectividad) + "%\n";
         Reporte_completo += "-----------------------------\n";
+
+        
 	}
+	cout << "El numero de iteracion es " << iteracion_fabrica << endl;
+	reportes[iteracion_fabrica] = Reporte_completo;
+    cout << "Reporte Guardado" << endl;
 	return Reporte_completo;
 
 }
 
 
+string Fabrica::get_reporte(int _index){
+	return reportes[_index];
+
+}
+
+int Fabrica::get_iteraciones(){
+	return iteracion_fabrica;
+}
 
 
+void Fabrica::crear_producto(int _cantidad){
 
+	num_productos = _cantidad;
+	//cout << "Estoy funcionando" << endl;
+	//Creamos el array dinamico en el HEAP de tamaño _cantidad
+	listaProductos = new Producto*[_cantidad];
+	//Creamos instancias de productos segun la cantidad en el parametro.
+	for(int i = 0; i < _cantidad; i++ ){
+		Producto* producto = new Producto(i+1);
+		listaProductos[i] = producto;
+	}
+
+}
 
 
 
