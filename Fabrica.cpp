@@ -6,7 +6,7 @@
 #include <array>
 
 //Librerías para retrasar couts en terminal.
-#include <thread>
+#include <thread> // Solo disponible en c++ 11.
 #include <chrono>
 
 

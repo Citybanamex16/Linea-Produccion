@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 // Librería que incluye la función rand()
-#include <cstdlib>
+#include <cstdlib> // Librería para hacer numero al azar
 
 using namespace std;
 
