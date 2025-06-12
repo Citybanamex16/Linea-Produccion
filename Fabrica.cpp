@@ -12,6 +12,8 @@
 
 using namespace std;
 
+
+// Constructor por Default. Se crean las 3 herencias de Maquina. No se crean productos.
 Fabrica::Fabrica(){
 	// Inicializamos los arrays de cada tipo.
 	iteracion_fabrica = 0;
@@ -38,7 +40,7 @@ Fabrica::Fabrica(){
 
 }
 
-
+// Constructor donde se crean las Herencias de Maquina y la cantidad de productos dado por el usuario.
 Fabrica::Fabrica(int _cantidad){
 	iteracion_fabrica = 0;
 	string reportes[20];
@@ -71,6 +73,14 @@ Fabrica::Fabrica(int _cantidad){
 
 }
 
+/* Metodo que inicial la agregación de los productos a las maquinas y 
+* su correspondiete proceso. En este metodo usamos Poliformismo al solo 
+* llamar el metodo de la herencia del listado de maquinas. Despues de procesas
+* un producto se pasa su apuntador y el tipo de maquina al metodo estado_del_producto(). 
+* Este metodo imprime el resultado de cada producto en cada maquina. Al finalizar con todos 
+* lo productos se regresa el reporte generado en la función Reporte().
+
+*/
 string Fabrica::iniciar_simulador(){
 
 	iteracion_fabrica += 1;	
@@ -88,7 +98,7 @@ string Fabrica::iniciar_simulador(){
 		for(int j = 0; j<3; ++j){
 			// j se reinicia cada ves que el loop de i se vuelve a ejecutar.
 			lista_Maquinas[j]->set_producto(listaProductos[i]);
-			lista_Maquinas[j]->procesar();
+			lista_Maquinas[j]->procesar(); // Poliformismo
 
 			tipo_maquina = lista_Maquinas[j]->get_type();
 
@@ -159,6 +169,11 @@ void Fabrica::estado_del_producto(Producto* producto,string tipo_maquina){
 
 }
 
+/* Metodo que genera reportes de cada maquina usando 
+*  los arrays de numero de exitos y numero de errores
+*  de cada maquina. El reporte generado aquí se guarda
+*  en el array de Reportes. 
+*/
 string Fabrica::generar_reporte(){
 	// numero de exitos, errores y eficiencia de cada maquina. 
 	string Reporte_completo = " ";

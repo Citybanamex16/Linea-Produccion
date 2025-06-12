@@ -1,10 +1,29 @@
  //main.cpp
 
-#include <iostream>
-#include <string>
-#include <array>
 
-#include "Fabrica.h"
+
+/*
+ * Proyecto Simulador de Linea de Producción
+ * Carlos Delgado Contreras 
+ * A01712819
+ * 11/06/2025
+ *
+ * Este es un proyecto  para la clase TC1030 Programación Orientado a
+ * Objetos. Es un programa que simula una linea de producción donde cierta
+ * cantidad de productos son emsamblados, verificados y empaquetados. El
+ * usuario puede elegir que cantidad de productos quiere crear. Al finalizar
+ * la linea de producción se imprime un reporte con los errores, exitos y
+ * porcentaje de eficacia en cada maquina. El usuario tambien podrá acceder
+ * a reportes de simulaciones pasadas.
+ */
+
+#include <iostream> // Imprimir 
+#include <string> // String de las impresiones
+
+
+#include "Fabrica.h" /* Incluir la clase composición. 
+Incluye a sus composiciones Producto y Maquina. */
+
 using namespace std;
 
 void menu(){
