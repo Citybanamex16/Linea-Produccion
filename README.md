@@ -31,12 +31,14 @@ Para compilar en la terminal es necesario compilar todos los 6 archivo .cpp de l
 En el caso de Mac se puede usar los siguientes comandos en terminal: 
 
 g++ main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp -o "Nombre" 
+
 g++ -std=c++11 main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp -o linea_produccion
 
 
 En windows con MinGW podemos usar estos comandos: 
 
 g++ main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp -o main.exe
+
 g++ -std=c++11 main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp -o main.exe
 
 En el caso de Git Bash en windows usamos el siguiente comando: g++ main.cpp Fabrica.cpp Producto.cpp Maquina.cpp Ensamblador.cpp Verificador.cpp Empaquetador.cpp -o main.exe
